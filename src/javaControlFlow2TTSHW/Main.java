@@ -105,17 +105,18 @@ public class Main {
 			while (lottNumbFive > 65) {
 				lottNumbFive = (lottNumbFive - 65);
 			}
-			
+		
 			System.out.printf("Lottery Numbers: %s, %s, %s, %s, %s  Magic ball: %s\n", lottNumbOne, lottNumbTwo, lottNumbThree, lottNumbFour, lottNumbFive, magBall);
 			
 			System.out.println("Would you like to answer the questions again to generate another set of numbers? (y/n)");// repeat process or exit
 			userResponse2 = userInput.nextLine();
 			
-			if(userResponse2.equalsIgnoreCase("n") || userResponse2.equalsIgnoreCase("no")) //{
+		} while (userResponse2.equalsIgnoreCase("y") || userResponse2.equalsIgnoreCase("yes"));
+			
+			if (userResponse2.equalsIgnoreCase("n") || userResponse2.equalsIgnoreCase("no")) {
 				System.out.printf("Okay %s, thank you for playing.\n", inputName);
-		
-		//}
 		}
+			
 		userInput.close();
 	}
 
