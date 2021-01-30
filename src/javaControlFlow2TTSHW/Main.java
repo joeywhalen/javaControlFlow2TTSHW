@@ -29,7 +29,13 @@ public class Main {
 		
 		if(userResponse.equalsIgnoreCase("n") || userResponse.equalsIgnoreCase("no")) {
 			System.out.printf("Okay %s, please return later to complete the survey.\n", inputName);
-		} else {
+			
+			userInput.close();
+			System.exit(0);
+		}
+		
+		do {
+			
 			System.out.println("What is the name of your favorite pet? (Seabiscuit, Jaws, etc.)");// request information to convert to lottery numbers
 			String favPet = userInput.nextLine();
 			char asciiFavPetC = favPet.charAt(2);
@@ -76,15 +82,15 @@ public class Main {
 				if(randThree !=0) break;
 			}
 			int magBall = (luckyNumb1 * randOne);// generate Magic ball
-			while (magBall > 76) {
+			while (magBall > 75) {
 				magBall = (magBall - 75);
 			}
 			int lottNumbOne = asciiFavPet;// generate lottery number one
-			while (lottNumbOne > 66) {
+			while (lottNumbOne > 65) {
 				lottNumbOne = (lottNumbOne - 65);
 			}
 			int lottNumbTwo = (carYear1 + luckyNumb1);// generate lottery number two
-			while (lottNumbTwo > 66) {
+			while (lottNumbTwo > 65) {
 				lottNumbTwo = (lottNumbTwo - 65);
 			}
 			int lottNumbThree = (randoNum1 - randTwo);// generate lottery number three
@@ -92,28 +98,23 @@ public class Main {
 				lottNumbThree = (lottNumbThree + randTwo);
 			}
 			int lottNumbFour = asciiFavActor;// generate lottery number four
-			while (lottNumbFour > 66) {
+			while (lottNumbFour > 65) {
 				lottNumbFour = (lottNumbFour - 65);
 			}
 			int lottNumbFive = (ageFavPet1 + carYear1);// generate lottery number five
-			while (lottNumbFive > 66) {
+			while (lottNumbFive > 65) {
 				lottNumbFive = (lottNumbFive - 65);
 			}
 			
 			System.out.printf("Lottery Numbers: %s, %s, %s, %s, %s  Magic ball: %s\n", lottNumbOne, lottNumbTwo, lottNumbThree, lottNumbFour, lottNumbFive, magBall);
-			//System.out.println(lottNumbTwo);
-			//System.out.println(lottNumbThree);
-			//System.out.println(lottNumbFour);
-			//System.out.println(lottNumbFive);
-			//System.out.println(magBall);
 			
 			System.out.println("Would you like to answer the questions again to generate another set of numbers? (y/n)");// repeat process or exit
-			String userResponse2 = userInput.nextLine();
+			userResponse2 = userInput.nextLine();
 			
-			if(userResponse2.equalsIgnoreCase("n") || userResponse2.equalsIgnoreCase("no")) {
+			if(userResponse2.equalsIgnoreCase("n") || userResponse2.equalsIgnoreCase("no")) //{
 				System.out.printf("Okay %s, thank you for playing.\n", inputName);
-			} else {
-		}
+		
+		//}
 		}
 		userInput.close();
 	}
