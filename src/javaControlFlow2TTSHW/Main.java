@@ -8,6 +8,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		String userResponse2;// declared variable userResponse2 outside of loop
+		
 		System.out.println("Numbers:");// print the valid numbers from AsciiChar file
 		AsciiCharsJCF.printNumbers();
 
